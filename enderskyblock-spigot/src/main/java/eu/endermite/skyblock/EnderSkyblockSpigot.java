@@ -18,7 +18,6 @@ public class EnderSkyblockSpigot extends JavaPlugin {
 
         getLogger().info("Enabling EnderSkyblock...");
 
-
     }
 
 }
