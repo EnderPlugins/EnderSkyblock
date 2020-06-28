@@ -1,0 +1,5 @@
+# Modes:
+# - "islands"     - server with player island worlds
+# - "lobby"       - server with spawn (for hub, shops etc.)
+mode: "islands"
+debug: true
