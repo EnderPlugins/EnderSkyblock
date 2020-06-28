@@ -1,0 +1,6 @@
+name: EnderSkyblock
+version: ${project.version}
+main: eu.endermite.enderskyblock.EnderSkyblock
+api-version: 1.15
+depend: [SlimeWorldManager]
+authors: [YouHaveTrouble, Dashiell]
