@@ -3,3 +3,6 @@
 # - "lobby"       - server with spawn (for hub, shops etc.)
 mode: "islands"
 debug: true
+islands:
+  # How many island worlds can be loaded at once. 0 for no limit.
+  worlds-limit: 0

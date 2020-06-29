@@ -13,7 +13,6 @@ public class IslandCreate {
 
     SlimePlugin swm = EnderSkyblockSpigot.getSwm();
 
-
     /**
      * @param schematic Name of the SWM world to clone
      * @return UUID of created island. Null if failed to create island
@@ -28,10 +27,9 @@ public class IslandCreate {
         props.setString(SlimeProperties.DIFFICULTY, "normal");
         props.setInt(SlimeProperties.SPAWN_X, 0);
         props.setInt(SlimeProperties.SPAWN_Y, 0);
-        props.setBoolean(SlimeProperties.PVP, false);
 
         try {
-            SlimeWorld world = swm.loadWorld(loader, schematic, true, props);
+            SlimeWorld world = EnderSkyblockSpigot.getIslandSchematics().getSchematic(schematic);
             UUID island_uuid = UUID.randomUUID();
             world.clone(island_uuid.toString(), loader);
             return island_uuid;

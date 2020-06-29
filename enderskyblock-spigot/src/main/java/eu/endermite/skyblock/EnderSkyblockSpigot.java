@@ -2,6 +2,7 @@ package eu.endermite.skyblock;
 
 import com.grinderwolf.swm.api.SlimePlugin;
 import eu.endermite.skyblock.cache.ConfigCache;
+import eu.endermite.skyblock.worldmanager.IslandSchematics;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -13,16 +14,19 @@ public class EnderSkyblockSpigot extends JavaPlugin {
     public static ConfigCache getConfigCache() {return configCache;}
     private static SlimePlugin swm;
     public static SlimePlugin getSwm() {return swm;}
+    private static IslandSchematics islandSchematics;
+    public static IslandSchematics getIslandSchematics() {return islandSchematics;}
 
 
     @Override
     public void onEnable() {
 
+        getLogger().info("Enabling EnderSkyblock...");
+
         plugin = this;
         configCache = new ConfigCache();
         swm = (SlimePlugin) Bukkit.getPluginManager().getPlugin("SlimeWorldManager");
-
-        getLogger().info("Enabling EnderSkyblock...");
+        islandSchematics = new IslandSchematics();
 
     }
 
