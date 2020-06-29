@@ -19,10 +19,13 @@ public class IslandSchematics {
 
     public IslandSchematics() {
 
-        SlimeLoader loader = swm.getLoader("mysql");
-
         // TODO make configurable schematics
 
+        //loop for schematics here
+
+        String schematic = "temp";
+
+        SlimeLoader loader = swm.getLoader("file");
         SlimePropertyMap props = new SlimePropertyMap();
         props.setString(SlimeProperties.DIFFICULTY, "normal");
         props.setInt(SlimeProperties.SPAWN_X, 0);
@@ -31,10 +34,6 @@ public class IslandSchematics {
         props.setBoolean(SlimeProperties.ALLOW_ANIMALS, true);
         props.setBoolean(SlimeProperties.ALLOW_MONSTERS, true);
         props.setBoolean(SlimeProperties.PVP, true);
-
-        //loop for schematics here
-
-        String schematic = "temp";
 
         try {
             SlimeWorld world = swm.loadWorld(loader, schematic, true, props);
@@ -51,7 +50,7 @@ public class IslandSchematics {
 
     }
 
-    public HashMap<String, SlimeWorld> schematicsList() {
+    public HashMap<String, SlimeWorld> getList() {
         return schematicWorlds;
     }
 
