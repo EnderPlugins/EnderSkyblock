@@ -17,11 +17,8 @@ public class EnderSkyblockSpigot extends JavaPlugin {
     private static IslandSchematics islandSchematics;
     public static IslandSchematics getIslandSchematics() {return islandSchematics;}
 
-
     @Override
     public void onEnable() {
-
-        getLogger().info("Enabling EnderSkyblock...");
 
         plugin = this;
         configCache = new ConfigCache();
