@@ -16,4 +16,7 @@ public interface Island {
     public float getLevel();
     public HashMap<UUID, String> getMembers();
     public int getMemberLimit();
+    public void setMemberLimit(int limit);
+    public void addMember(UUID uuid, String rank);
+    public void remMember(UUID uuid);
 }

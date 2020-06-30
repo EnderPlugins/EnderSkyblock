@@ -133,6 +133,21 @@ public class EnderIsland implements Schematic, Island {
         return this.memberLimit;
     }
 
+    @Override
+    public void setMemberLimit(int limit) {
+        this.memberLimit = limit;
+    }
+
+    @Override
+    public void addMember(UUID uuid, String rank) {
+        this.members.put(uuid, rank);
+    }
+
+    @Override
+    public void remMember(UUID uuid) {
+        this.members.remove(uuid);
+    }
+
 
     public static class Builder {
         private String worldname;
