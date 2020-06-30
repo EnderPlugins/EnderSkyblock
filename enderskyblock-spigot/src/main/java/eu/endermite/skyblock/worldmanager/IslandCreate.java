@@ -3,8 +3,6 @@ package eu.endermite.skyblock.worldmanager;
 import com.grinderwolf.swm.api.SlimePlugin;
 import com.grinderwolf.swm.api.loaders.SlimeLoader;
 import com.grinderwolf.swm.api.world.SlimeWorld;
-import com.grinderwolf.swm.api.world.properties.SlimeProperties;
-import com.grinderwolf.swm.api.world.properties.SlimePropertyMap;
 import eu.endermite.skyblock.EnderSkyblockSpigot;
 import eu.endermite.skyblock.worldmanager.schematics.EnderSchematic;
 
@@ -21,15 +19,6 @@ public class IslandCreate {
     public UUID createNewIsland(EnderSchematic schematic) {
 
         SlimeLoader loader = swm.getLoader(schematic.getLoader());
-
-        SlimePropertyMap props = new SlimePropertyMap();
-        props.setString(SlimeProperties.DIFFICULTY, schematic.getDifficulty());
-        props.setInt(SlimeProperties.SPAWN_X, schematic.getSpawnLocation().get("x"));
-        props.setInt(SlimeProperties.SPAWN_Y, schematic.getSpawnLocation().get("y"));
-        props.setInt(SlimeProperties.SPAWN_Z, schematic.getSpawnLocation().get("z"));
-        props.setBoolean(SlimeProperties.ALLOW_ANIMALS, schematic.getAnimalSpawns());
-        props.setBoolean(SlimeProperties.ALLOW_MONSTERS, schematic.getMonsterSpawns());
-        props.setBoolean(SlimeProperties.PVP, schematic.getPvp());
 
         try {
             SlimeWorld world = EnderSkyblockSpigot.getIslandSchematics().getSchematic(schematic.getName());
