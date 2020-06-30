@@ -1,6 +1,7 @@
 package eu.endermite.skyblock.worldmanager.schematics;
 
 import java.util.HashMap;
+import java.util.UUID;
 
 public interface Island {
 
@@ -13,5 +14,6 @@ public interface Island {
     public void setPointMultiplier(float multiplier);
     public float getPointMultiplier();
     public float getLevel();
-
+    public HashMap<UUID, String> getMembers();
+    public int getMemberLimit();
 }

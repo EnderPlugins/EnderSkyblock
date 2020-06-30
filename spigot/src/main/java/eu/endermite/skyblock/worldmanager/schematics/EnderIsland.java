@@ -4,6 +4,7 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.UUID;
 
 public class EnderIsland implements Schematic, Island {
 
@@ -20,6 +21,8 @@ public class EnderIsland implements Schematic, Island {
     private int points;
     private float pointMultiplier;
     private float level;
+    private HashMap<UUID, String> members;
+    private int memberLimit;
 
     public EnderIsland(Builder builder) {
         this.worldname = builder.worldname;
@@ -35,6 +38,8 @@ public class EnderIsland implements Schematic, Island {
         this.points = builder.points;
         this.pointMultiplier = builder.pointMultiplier;
         this.level = builder.level;
+        this.members = builder.members;
+        this.memberLimit = builder.memberLimit;
     }
 
 
@@ -118,6 +123,16 @@ public class EnderIsland implements Schematic, Island {
         return this.level;
     }
 
+    @Override
+    public HashMap<UUID, String> getMembers() {
+        return this.members;
+    }
+
+    @Override
+    public int getMemberLimit() {
+        return this.memberLimit;
+    }
+
 
     public static class Builder {
         private String worldname;
@@ -133,6 +148,8 @@ public class EnderIsland implements Schematic, Island {
         private int points;
         private float pointMultiplier;
         private float level;
+        private HashMap<UUID, String> members;
+        private int memberLimit;
 
         public static Builder newInstance() {
             return new Builder();
@@ -205,6 +222,16 @@ public class EnderIsland implements Schematic, Island {
 
         public Builder setLevel(float level) {
             this.level = level;
+            return this;
+        }
+
+        public Builder setMembers(HashMap<UUID, String> members) {
+            this.members = members;
+            return this;
+        }
+
+        public Builder setMemberLimit(int limit) {
+            this.memberLimit = limit;
             return this;
         }
 
