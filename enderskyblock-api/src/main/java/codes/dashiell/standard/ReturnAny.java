@@ -6,8 +6,8 @@
 
 package codes.dashiell.standard;
 
-public interface Callback<T> {
+public interface ReturnAny<T> {
 
-  void callback(T t);
+    void pingBack(T t);
 
 }
