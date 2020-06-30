@@ -21,10 +21,6 @@ public class IslandLoad {
 
         SlimeLoader loader = swm.getLoader("mysql");
 
-        /*
-            TODO customisability support
-            Loading additional properties from database?
-         */
 
         SlimePropertyMap props = new SlimePropertyMap();
         props.setString(SlimeProperties.DIFFICULTY, "normal");

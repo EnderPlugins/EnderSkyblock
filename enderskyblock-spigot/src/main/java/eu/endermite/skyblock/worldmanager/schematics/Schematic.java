@@ -1,6 +1,5 @@
 package eu.endermite.skyblock.worldmanager.schematics;
 
-
 import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
