@@ -19,9 +19,8 @@ public class IslandSchematics {
 
     public IslandSchematics() {
 
-        // TODO make configurable schematics
 
-        //loop for schematics here
+        //loop for schematics loading here
 
         String schematic = "temp";
 
