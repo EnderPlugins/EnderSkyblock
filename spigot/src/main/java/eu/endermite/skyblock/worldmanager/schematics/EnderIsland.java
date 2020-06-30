@@ -15,7 +15,7 @@ public class EnderIsland implements Schematic, Island {
     private final boolean animalSpawns;
     private final boolean monsterSpawns;
     private final boolean pvp;
-    private final ArrayList<ItemStack> startingChestInv;
+    private ArrayList<ItemStack> startingChestInv;
     private int border;
     private HashMap<String, HashMap<String, Integer>> warpLocations;
     private int points;
@@ -141,6 +141,11 @@ public class EnderIsland implements Schematic, Island {
     @Override
     public void setMemberLimit(int limit) {
         this.memberLimit = limit;
+    }
+
+    @Override
+    public void setStartingChestItems(ArrayList<ItemStack> list) {
+        this.startingChestInv = list;
     }
 
     @Override

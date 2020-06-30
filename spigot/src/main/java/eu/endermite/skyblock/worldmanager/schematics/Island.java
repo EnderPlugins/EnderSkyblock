@@ -1,5 +1,8 @@
 package eu.endermite.skyblock.worldmanager.schematics;
 
+import org.bukkit.inventory.ItemStack;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
 
@@ -22,5 +25,6 @@ public interface Island {
     public String getMemberRank(UUID uuid);
     public int getMemberLimit();
     public void setMemberLimit(int limit);
+    public void setStartingChestItems(ArrayList<ItemStack> list);
 
 }
