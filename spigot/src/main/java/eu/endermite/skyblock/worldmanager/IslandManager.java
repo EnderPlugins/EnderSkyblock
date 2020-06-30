@@ -29,7 +29,7 @@ public class IslandManager {
 
         try {
             SlimeLoader loader = swm.getLoader(schematic.getLoader());
-            SlimeWorld world = EnderSkyblockSpigot.getIslandSchematics().getSchematic(schematic.getName());
+            SlimeWorld world = EnderSkyblockSpigot.getSchematicImporter().getSchematic(schematic.getName());
             UUID island_uuid = UUID.randomUUID();
             world.clone(island_uuid.toString(), loader);
 
@@ -101,7 +101,7 @@ public class IslandManager {
     }
 
     /**
-     * @param uuid Name of the SWM world to clone
+     * @param uuid UUID of island to delete
      * @return boolean if island was deleted successfully
      */
     public UUID removeIsland(UUID uuid) {

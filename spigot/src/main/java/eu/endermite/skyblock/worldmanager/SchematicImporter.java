@@ -10,15 +10,14 @@ import eu.endermite.skyblock.EnderSkyblockSpigot;
 import java.util.HashMap;
 import java.util.logging.Logger;
 
-public class IslandSchematics {
+public class SchematicImporter {
 
     private final SlimePlugin swm = EnderSkyblockSpigot.getSwm();
     private final Logger logger = EnderSkyblockSpigot.getPlugin().getLogger();
 
     private HashMap<String, SlimeWorld> schematicWorlds = new HashMap<>();
 
-    public IslandSchematics() {
-
+    public SchematicImporter() {
 
         //loop for schematics loading here
 
