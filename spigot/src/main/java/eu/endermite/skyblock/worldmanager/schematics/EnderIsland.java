@@ -124,6 +124,11 @@ public class EnderIsland implements Schematic, Island {
     }
 
     @Override
+    public void setLevel(float level) {
+        this.level = level;
+    }
+
+    @Override
     public HashMap<UUID, String> getMembers() {
         return this.members;
     }
@@ -148,6 +153,15 @@ public class EnderIsland implements Schematic, Island {
         this.members.remove(uuid);
     }
 
+    @Override
+    public void setMemberRank(UUID uuid, String rank) {
+        this.members.replace(uuid, rank);
+    }
+
+    @Override
+    public String getMemberRank(UUID uuid) {
+        return this.members.get(uuid);
+    }
 
     public static class Builder {
         private String worldname;
