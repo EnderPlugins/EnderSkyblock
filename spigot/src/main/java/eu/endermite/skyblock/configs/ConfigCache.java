@@ -1,4 +1,4 @@
-package eu.endermite.skyblock.cache;
+package eu.endermite.skyblock.configs;
 
 import eu.endermite.skyblock.EnderSkyblockSpigot;
 import org.bukkit.configuration.file.FileConfiguration;

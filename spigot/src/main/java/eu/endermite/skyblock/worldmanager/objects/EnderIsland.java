@@ -1,4 +1,4 @@
-package eu.endermite.skyblock.worldmanager.schematics;
+package eu.endermite.skyblock.worldmanager.objects;
 
 import org.bukkit.inventory.ItemStack;
 
@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
 
+/**
+ * Object responsible for storing all information regarding an island
+ */
 public class EnderIsland implements Schematic, Island {
 
     private final String worldname;
@@ -41,7 +44,6 @@ public class EnderIsland implements Schematic, Island {
         this.members = builder.members;
         this.memberLimit = builder.memberLimit;
     }
-
 
     public String getName() {
         return this.worldname;

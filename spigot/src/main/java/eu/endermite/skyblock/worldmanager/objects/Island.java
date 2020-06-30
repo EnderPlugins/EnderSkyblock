@@ -1,4 +1,4 @@
-package eu.endermite.skyblock.worldmanager.schematics;
+package eu.endermite.skyblock.worldmanager.objects;
 
 import org.bukkit.inventory.ItemStack;
 

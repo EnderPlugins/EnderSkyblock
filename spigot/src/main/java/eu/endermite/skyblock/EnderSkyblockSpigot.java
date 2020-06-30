@@ -1,7 +1,7 @@
 package eu.endermite.skyblock;
 
 import com.grinderwolf.swm.api.SlimePlugin;
-import eu.endermite.skyblock.cache.ConfigCache;
+import eu.endermite.skyblock.configs.ConfigCache;
 import eu.endermite.skyblock.worldmanager.IslandManager;
 import eu.endermite.skyblock.worldmanager.IslandSchematics;
 import org.bukkit.Bukkit;

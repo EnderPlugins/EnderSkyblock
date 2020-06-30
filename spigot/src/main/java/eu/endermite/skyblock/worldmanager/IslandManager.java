@@ -6,8 +6,8 @@ import com.grinderwolf.swm.api.world.SlimeWorld;
 import com.grinderwolf.swm.api.world.properties.SlimeProperties;
 import com.grinderwolf.swm.api.world.properties.SlimePropertyMap;
 import eu.endermite.skyblock.EnderSkyblockSpigot;
-import eu.endermite.skyblock.worldmanager.schematics.EnderIsland;
-import eu.endermite.skyblock.worldmanager.schematics.EnderSchematic;
+import eu.endermite.skyblock.worldmanager.objects.EnderIsland;
+import eu.endermite.skyblock.worldmanager.objects.EnderSchematic;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
@@ -48,7 +48,7 @@ public class IslandManager {
      */
     public boolean loadIsland(UUID uuid) {
 
-        //TODO Load island data from database and dum it into islandData hashmap
+        //TODO Load island data from database and dump it into islandData hashmap
 
         HashMap<String, Object> islandData = new HashMap<>();
 
