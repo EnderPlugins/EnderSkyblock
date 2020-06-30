@@ -26,7 +26,7 @@ public class BungeeBootloader implements Bootloader {
                 this.enableableSet.add((Enableable<SimpleResult>) a);
             }
             if (a instanceof Disableable) {
-                this.disableableSet.add((Disableable) a);
+                this.disableableSet.add((Disableable<?>) a);
             }
         });
     }
@@ -45,7 +45,7 @@ public class BungeeBootloader implements Bootloader {
 
     @Override
     public void disable() {
-        for(Disableable disableable : this.disableableSet){
+        for(Disableable<?> disableable : this.disableableSet){
             disableable.disable();
         }
     }

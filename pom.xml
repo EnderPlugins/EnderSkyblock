@@ -8,9 +8,9 @@
     <artifactId>enderskyblock-parent</artifactId>
     <version>0.0.1</version>
     <modules>
-        <module>enderskyblock-bungee</module>
-        <module>enderskyblock-spigot</module>
-        <module>enderskyblock-api</module>
+        <module>bungee</module>
+        <module>spigot</module>
+        <module>api</module>
     </modules>
     <packaging>pom</packaging>
 
