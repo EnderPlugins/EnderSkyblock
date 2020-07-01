@@ -8,6 +8,7 @@ import com.grinderwolf.swm.api.world.properties.SlimePropertyMap;
 import eu.endermite.skyblock.EnderSkyblockSpigot;
 import eu.endermite.skyblock.worldmanager.objects.EnderIsland;
 import eu.endermite.skyblock.worldmanager.objects.EnderSchematic;
+import org.bukkit.World;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
@@ -120,16 +121,37 @@ public class IslandManager {
      */
     public boolean unloadIsland(UUID uuid) {
 
-        // TODO island unload logic
+        EnderIsland islandToUnload = null;
 
-        return false;
+        for (EnderIsland island : getLoadedIslands()) {
+            if (island.getName().equals(uuid.toString())) {
+                islandToUnload = island;
+                break;
+            }
+        }
+
+        if (islandToUnload == null)
+            return false;
+
+        saveIsland(uuid, false);
+
+        for (World world : EnderSkyblockSpigot.getPlugin().getServer().getWorlds()) {
+            if (world.getName().contains(uuid.toString())) {
+                EnderSkyblockSpigot.getPlugin().getServer().unloadWorld(world, true);
+                break;
+            }
+        }
+
+        loadedIslands.remove(islandToUnload);
+        return true;
     }
 
     /**
      * @param uuid UUID of an island to save
+     * @param bukkitsave true to save island data and world, false to save only island data
      * @return boolean if island was saved successfully
      */
-    public boolean saveIsland(UUID uuid) {
+    public boolean saveIsland(UUID uuid, boolean bukkitsave) {
 
 
         return false;
