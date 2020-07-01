@@ -8,6 +8,7 @@ import java.util.UUID;
 
 public interface Island {
 
+    public UUID getUuid();
     public int getBorder();
     public HashMap<String, HashMap<String, Integer>> getWarpLocations();
     public void addWarpLocation(String name, int x, int y, int z);

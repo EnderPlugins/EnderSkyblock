@@ -26,6 +26,7 @@ public class EnderIsland implements Schematic, Island {
     private float level;
     private HashMap<UUID, String> members;
     private int memberLimit;
+    private UUID uuid;
 
     public EnderIsland(Builder builder) {
         this.worldname = builder.worldname;
@@ -43,6 +44,7 @@ public class EnderIsland implements Schematic, Island {
         this.level = builder.level;
         this.members = builder.members;
         this.memberLimit = builder.memberLimit;
+        this.uuid = builder.uuid;
     }
 
     public String getName() {
@@ -75,6 +77,11 @@ public class EnderIsland implements Schematic, Island {
 
     public ArrayList<ItemStack> getStartingChestInv() {
         return this.startingChestInv;
+    }
+
+    @Override
+    public UUID getUuid() {
+        return null;
     }
 
     public int getBorder() {
@@ -186,12 +193,18 @@ public class EnderIsland implements Schematic, Island {
         private float level;
         private HashMap<UUID, String> members;
         private int memberLimit;
+        private UUID uuid;
 
         public static Builder newInstance() {
             return new Builder();
         }
 
         private Builder() {}
+
+        public Builder setUuid(UUID uuid) {
+            this.uuid = uuid;
+            return this;
+        }
 
         public Builder setName(String name) {
             this.worldname = name;
