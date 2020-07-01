@@ -4,6 +4,7 @@ import com.grinderwolf.swm.api.SlimePlugin;
 import eu.endermite.skyblock.configs.ConfigCache;
 import eu.endermite.skyblock.worldmanager.IslandManager;
 import eu.endermite.skyblock.worldmanager.SchematicImporter;
+import eu.endermite.skyblock.worldmanager.objects.EnderIsland;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -28,6 +29,16 @@ public class EnderSkyblockSpigot extends JavaPlugin {
         swm = (SlimePlugin) Bukkit.getPluginManager().getPlugin("SlimeWorldManager");
         schematicImporter = new SchematicImporter();
         islandManager = new IslandManager();
+
+    }
+
+    @Override
+    public void onDisable() {
+
+        // safely sync save all loaded worlds and island data, then unload worlds
+        for (EnderIsland island : getIslandManager().getLoadedIslands()) {
+            getIslandManager().unloadIsland(island.getUuid());
+        }
 
     }
 

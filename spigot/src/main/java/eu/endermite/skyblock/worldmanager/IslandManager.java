@@ -59,6 +59,8 @@ public class IslandManager {
         props.setBoolean(SlimeProperties.PVP, true);
         props.setBoolean(SlimeProperties.ALLOW_MONSTERS, true);
         props.setBoolean(SlimeProperties.ALLOW_ANIMALS, true);
+
+        //TODO get coords properly
         props.setInt(SlimeProperties.SPAWN_X, (Integer) islandData.get("spawnLoc"));
         props.setInt(SlimeProperties.SPAWN_Y, (Integer) islandData.get("spawnLoc"));
         props.setInt(SlimeProperties.SPAWN_Z, (Integer) islandData.get("spawnLoc"));
@@ -68,6 +70,7 @@ public class IslandManager {
 
             // Load neccesary data
             EnderIsland.Builder builder = EnderIsland.Builder.newInstance();
+            builder.setUuid(uuid);
             builder.setBorder((Integer) islandData.get("size"));
             builder.setAnimalSpawns((Boolean) islandData.get("animalspawns"));
             builder.setAnimalSpawns((Boolean) islandData.get("monsterspawns"));
