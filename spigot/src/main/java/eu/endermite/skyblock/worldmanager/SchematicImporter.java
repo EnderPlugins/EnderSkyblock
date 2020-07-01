@@ -41,9 +41,10 @@ public class SchematicImporter {
                 logger.info("Loaded schematic \""+schematic+"\"");
 
         } catch (Exception e) {
+            logger.severe("Failed to load schematic \""+schematic+"\"");
             if (EnderSkyblockSpigot.getConfigCache().debugEnabled())
-                logger.severe("Failed to load schematic \""+schematic+"\"");
-            e.printStackTrace();
+                e.printStackTrace();
+
         }
 
     }
