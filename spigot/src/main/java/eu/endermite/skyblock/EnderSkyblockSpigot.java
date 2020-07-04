@@ -1,6 +1,7 @@
 package eu.endermite.skyblock;
 
 import com.grinderwolf.swm.api.SlimePlugin;
+import eu.endermite.skyblock.commands.eskyblock.Eskyblock;
 import eu.endermite.skyblock.configs.ConfigCache;
 import eu.endermite.skyblock.worldmanager.IslandManager;
 import eu.endermite.skyblock.worldmanager.SchematicImporter;
@@ -21,14 +22,24 @@ public class EnderSkyblockSpigot extends JavaPlugin {
     private static IslandManager islandManager;
     public static IslandManager getIslandManager() {return islandManager;}
 
+    public void reloadConfig() {
+        saveDefaultConfig();
+        configCache = new ConfigCache();
+    }
+
+
     @Override
     public void onEnable() {
 
         plugin = this;
-        configCache = new ConfigCache();
+        reloadConfig();
         swm = (SlimePlugin) Bukkit.getPluginManager().getPlugin("SlimeWorldManager");
         schematicImporter = new SchematicImporter();
         islandManager = new IslandManager();
+
+
+        getCommand("eskyblock").setExecutor(new Eskyblock());
+        getCommand("eskyblock").setTabCompleter(new Eskyblock());
 
     }
 
